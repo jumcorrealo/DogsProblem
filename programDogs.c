@@ -141,7 +141,7 @@ int main(){
     int salir=0;
     while(salir==0){
         CantidadStruct=0;
-        printf("Digite la opcion a realizar: \n");
+        printf("\n\n\n\nDigite la opcion a realizar: \n");
         printf("1- Ingresar Registro \n");
         printf("2- Ver Registro \n");
         printf("3- Borrar Registro \n");
@@ -411,11 +411,8 @@ void loadHashTable( ){
     fp=fopen("dataDogs.dat","a+");//Añadirá la nueva estructura al final del archivo.
 
     if (ptr == NULL){
-        printf("ingreso al primer if \n");
         //ptr = malloc( sizeof( struct linkedList ) * ARRAY_SIZE ); //Se crea una lista del tamaño asignado arriba
         ptr = malloc (107374);
-        //ptr = malloc(sizeof(fp));
-        printf("petición del malloc done");
         if ( ptr == NULL ){
             perror( "Error, no existe la hash PTR" );
             exit( -1 );
@@ -675,16 +672,16 @@ void crear_historia(){
     printf("\nIntroduce 'Número del registro' para buscar la historia clínica: \n");	
 
     scanf("%s",nombre);
-
+    strcat(nombre, ".txt");
     fp = fopen(nombre, "r");
-    if(!fp){
+    if(fp == 0){
         printf("El archivo no existe\n");
-        strcat(nombre,".txt");
         fp = fopen(nombre, "w+b");
         printf("Archivo creado\n");
         strcat(sys, nombre);
         system(sys);
     } else {
+        strcat(sys, nombre);
         printf("El archivo existe: \n");
         system(sys);
     }
