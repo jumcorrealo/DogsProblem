@@ -1,0 +1,7 @@
+Nombre: Dixi
+Tipo: gato
+Edad: 8
+Raza: bersa
+Estatura: 8.40779e-45
+Peso: 6
+Sexo: h
